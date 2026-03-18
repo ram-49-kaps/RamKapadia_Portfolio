@@ -3,7 +3,7 @@
 A highly interactive, modern personal portfolio website engineered to showcase my experience across **Artificial Intelligence, Machine Learning, and Full Stack Development**.
 
 ## 🚀 Live Demo
-🔗 **[View the Live Portfolio]**(insert_deployment_link_here)
+🔗 **https://ram-kapadia-portfolio.vercel.app/
 
 ## 🧠 About Me
 I am an M.Sc. Artificial Intelligence & Machine Learning student. My core focus is bridging the gap between back-end complex AI architectures—like Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG)—and front-end beautiful, high-performance, user-centric web applications.
