@@ -37,7 +37,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="text-gray-500 text-xs flex items-center gap-1">
-            © {currentYear} Ram Kapadia. Made with <FaHeart className="text-red-500 text-[10px]" /> and React
+            © {currentYear} Ram Kapadia.
           </p>
         </div>
       </div>
