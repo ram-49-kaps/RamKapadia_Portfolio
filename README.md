@@ -1,16 +1,52 @@
-# React + Vite
+# Ram Kapadia — Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A highly interactive, modern personal portfolio website engineered to showcase my experience across **Artificial Intelligence, Machine Learning, and Full Stack Development**.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
+🔗 **[View the Live Portfolio]**(insert_deployment_link_here)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🧠 About Me
+I am an M.Sc. Artificial Intelligence & Machine Learning student. My core focus is bridging the gap between back-end complex AI architectures—like Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG)—and front-end beautiful, high-performance, user-centric web applications.
 
-## React Compiler
+## 🛠️ Tech Stack
+This application was built from the ground up for maximum speed, smooth interactive layouts, and a highly polished dark-mode aesthetic.
+* **Core Framework:** React.js powered by Vite
+* **Styling Architecture:** Tailwind CSS (Custom Gradients & Glassmorphism)
+* **Animation Engine:** Framer Motion (Dynamic SVG paths, Floating elements, Scroll transitions)
+* **UI Tooling:** React Icons
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 💻 Running Locally
 
-## Expanding the ESLint configuration
+To explore the frontend locally on your machine, follow these steps:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/ram-49-kaps/RamKapadia_Portfolio.git
+   cd RamKapadia_Portfolio
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the Vite development server:**
+   ```bash
+   npm run dev
+   ```
+   *Your server will typically boot up instantly at `http://localhost:5173`.*
+
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+## 📫 Connect with Me
+If you're interested in collaborating on an AI engineering project or discussing Software Engineering opportunities, feel free to reach out to me!
+
+- **LinkedIn:** [Ram Kapadia](https://linkedin.com/in/ram-kapadia-a382332a3)
+- **GitHub:** [@ram-49-kaps](https://github.com/ram-49-kaps)
+- **Email:** ramkapadia49@gmail.com
+
+---
+*Actively looking for Summer 2026 Software Engineering & AI/ML Internship opportunities.*
