@@ -201,8 +201,10 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-tr from-accent-blue/20 to-accent-purple/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-20 mix-blend-overlay"></div>
 
               <motion.img
-                src="/profile.jpg"
+                src="/profile-optimized.jpg"
                 alt="Ram Kapadia"
+                fetchpriority="high"
+                loading="eager"
                 className="w-full h-full object-cover object-top scale-[1.05] group-hover:scale-[1.12] group-hover:rotate-2 transition-transform duration-700 ease-out"
               />
             </motion.div>
