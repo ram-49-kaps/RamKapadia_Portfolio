@@ -20,7 +20,7 @@ function App() {
   }, []);
 
   return (
-    <div className="animated-bg min-h-screen relative overflow-x-hidden w-full max-w-[100vw]">
+    <div className="animated-bg min-h-screen relative overflow-x-hidden w-full">
       {/* Cursor glow */}
       {!loading && (
         <div

@@ -50,7 +50,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="relative w-full overflow-hidden flex items-center justify-center pt-30 lg:pt-40 pb-20" style={{ minHeight: '100svh' }}>
+    <section id="home" className="relative w-full overflow-hidden flex items-start lg:items-center justify-center pt-28 sm:pt-32 lg:pt-40 pb-16 sm:pb-20 min-h-screen">
       {/* Refined Premium Background */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
         {/* Soft dynamic gradient orbs */}
@@ -70,7 +70,7 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center mt-5 lg:mt-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mt-5 lg:mt-0">
 
           {/* Left Column: Text Content */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
@@ -86,7 +86,7 @@ const Hero = () => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-cyan opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-cyan"></span>
                 </span>
-                <span className="text-sm font-medium text-gray-300">Available for Summer Internship 2026</span>
+                <span className="text-xs sm:text-sm font-medium text-gray-300 text-center">Available for Summer Internship 2026</span>
               </div>
             </motion.div>
 
@@ -97,15 +97,17 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
               className="relative w-full max-w-2xl mx-auto lg:mx-0"
             >
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-extrabold mb-8 font-heading tracking-tight leading-[1.2]">
-                <span className="text-white block pb-2">Crafting Intelligent</span>
-                <span className="gradient-text pb-2 block">Digital Experiences.</span>
+              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-extrabold mb-4 sm:mb-8 font-heading tracking-tight leading-[1.2]">
+                <span className="text-white block pb-1 sm:pb-2">Crafting Intelligent</span>
+                <span className="gradient-text pb-1 sm:pb-2 block">Digital Experiences.</span>
               </h1>
 
               {/* Dynamic typing row */}
-              <div className="flex flex-col sm:flex-row items-center lg:items-start lg:justify-start justify-center gap-2 sm:gap-4 text-lg sm:text-xl md:text-2xl text-gray-400 mb-8 min-h-[3.5rem] font-medium">
-                <span>I'm</span>
-                <span className="text-white font-semibold">Ram Kapadia,</span>
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-2 gap-y-1 sm:gap-x-4 text-base sm:text-xl md:text-2xl text-gray-400 mb-6 sm:mb-8 min-h-[3.5rem] font-medium">
+                <div className="flex items-center gap-x-1 sm:gap-x-2">
+                  <span>I'm</span>
+                  <span className="text-white font-semibold">Ram Kapadia,</span>
+                </div>
                 <span className="hidden sm:inline text-gray-600">—</span>
                 <div className="flex items-center gap-2 mt-1 sm:mt-0">
                   <span ref={typingRef} className="text-accent-cyan mr-1" />
@@ -113,7 +115,7 @@ const Hero = () => {
                 </div>
               </div>
 
-              <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto lg:mx-0 mb-12 leading-loose tracking-wide sm:text-left text-justify">
+              <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto lg:mx-0 mb-8 sm:mb-12 leading-relaxed sm:leading-loose tracking-wide text-center lg:text-left">
                 M.Sc. Artificial Intelligence &amp; Machine Learning student. I bridge the gap between complex AI models (LLMs, RAG) and beautiful, high-performance web applications.
               </p>
             </motion.div>
@@ -195,7 +197,7 @@ const Hero = () => {
                 y: [-15, 15, -15],
               }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative z-10 w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] border-4 border-white/5 shadow-2xl hover:border-accent-purple/40 hover:shadow-accent-purple/20 transition-all duration-700 ease-in-out group animate-morph overflow-hidden bg-dark-800"
+              className="relative z-10 w-56 h-56 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] border-4 border-white/5 shadow-2xl hover:border-accent-purple/40 hover:shadow-accent-purple/20 transition-all duration-700 ease-in-out group animate-morph overflow-hidden bg-dark-800"
             >
               {/* Inner subtle border gradient */}
               <div className="absolute inset-0 bg-gradient-to-tr from-accent-blue/20 to-accent-purple/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-20 mix-blend-overlay"></div>
