@@ -97,15 +97,17 @@ const Experience = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`relative flex flex-col md:flex-row items-center gap-8 ${
+                className={`relative flex flex-col md:flex-row items-center w-full ${
                   i % 2 === 0 ? 'md:flex-row-reverse' : ''
                 }`}
               >
+                {/* Spacer to push center dot into middle */}
+                <div className="hidden md:block md:w-5/12" />
+
                 {/* Center dot - shared between mobile/desktop layout logic */}
-                <div className="absolute -left-[32px] md:static md:left-auto flex-shrink-0 w-16 h-16 flex items-center justify-center md:z-20">
-                   <div className="w-16 h-px bg-white/10 hidden md:block absolute top-1/2 -translate-y-1/2" style={{
-                      right: i % 2 === 0 ? '50%' : 'auto',
-                      left: i % 2 !== 0 ? '50%' : 'auto',
+                <div className="absolute -left-[32px] md:static md:w-2/12 flex items-center justify-center flex-shrink-0 md:z-20">
+                   <div className="hidden md:block absolute h-px bg-white/10 w-1/2 top-1/2 -translate-y-1/2" style={{
+                      left: i % 2 === 0 ? '0' : '50%',
                    }}/>
                    
                    {/* Animated Pulsating Pin */}
@@ -119,29 +121,31 @@ const Experience = () => {
                    </div>
                 </div>
 
-                <div className="w-full md:w-1/2 pl-8 md:pl-0">
-                  <div className={`p-8 rounded-[2rem] glass border border-white/5 hover:border-white/20 transition-all bg-[#121826]/60 group relative overflow-hidden ${i % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
+                <div className="w-full md:w-5/12 pl-8 md:pl-0">
+                  <div className={`p-6 sm:p-8 rounded-[2rem] glass border border-white/5 hover:border-white/20 transition-all bg-[#121826]/60 group relative overflow-hidden ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
                     
                     {/* Corner decorative bracket */}
-                    <div className={`absolute top-4 ${i % 2 === 0 ? 'left-4' : 'right-4'} opacity-10 group-hover:opacity-30 transition-opacity`}>
-                       <div className="w-8 h-8 border-t-2 border-l-2 border-white rounded-tl-lg" />
+                    <div className={`absolute top-4 ${i % 2 === 0 ? 'right-4' : 'left-4'} opacity-10 group-hover:opacity-30 transition-opacity z-0 pointer-events-none`}>
+                       <div className={`w-10 h-10 border-t-2 ${i % 2 === 0 ? 'border-r-2 rounded-tr-xl' : 'border-l-2 rounded-tl-xl'} border-white`} />
                     </div>
 
-                    <span className="inline-block px-3 py-1 text-[10px] font-bold rounded-full bg-white/5 text-gray-500 mb-4 border border-white/10 uppercase tracking-widest group-hover:text-accent-blue transition-colors">
-                      {item.period}
-                    </span>
-                    
-                    <h4 className="text-xl md:text-2xl font-extrabold text-white mb-2 font-heading tracking-tight">
-                      {item.title}
-                    </h4>
-                    
-                    <div className="text-accent-blue font-bold text-sm mb-4 tracking-wide">
-                      {item.organization}
+                    <div className="relative z-10">
+                      <span className="inline-block px-3 py-1 text-[10px] sm:text-xs font-bold rounded-full bg-white/5 text-gray-400 mb-4 border border-white/10 uppercase tracking-widest group-hover:text-accent-blue transition-colors">
+                        {item.period}
+                      </span>
+                      
+                      <h4 className="text-xl md:text-2xl font-extrabold text-white mb-2 font-heading tracking-tight">
+                        {item.title}
+                      </h4>
+                      
+                      <div className="text-accent-blue font-bold text-sm mb-4 tracking-wide">
+                        {item.organization}
+                      </div>
+                      
+                      <p className="text-gray-400 leading-relaxed text-sm md:text-base font-medium">
+                        {item.description}
+                      </p>
                     </div>
-                    
-                    <p className="text-gray-400 leading-relaxed text-sm md:text-base font-medium">
-                      {item.description}
-                    </p>
                   </div>
                 </div>
               </motion.div>
