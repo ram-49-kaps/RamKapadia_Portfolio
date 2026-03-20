@@ -106,9 +106,7 @@ const Experience = () => {
 
                 {/* Center dot - shared between mobile/desktop layout logic */}
                 <div className="absolute -left-[32px] md:relative md:w-2/12 flex items-center justify-center flex-shrink-0 md:z-20">
-                   <div className="hidden md:block absolute h-px bg-white/10 w-1/2 top-1/2 -translate-y-1/2" style={{
-                      left: i % 2 === 0 ? '0' : '50%',
-                   }}/>
+                   <div className={`hidden md:block absolute h-px bg-white/20 w-1/2 top-1/2 -translate-y-1/2 ${i % 2 === 0 ? 'left-0' : 'right-0'}`} />
                    
                    {/* Animated Pulsating Pin */}
                    <div className="relative flex items-center justify-center">
