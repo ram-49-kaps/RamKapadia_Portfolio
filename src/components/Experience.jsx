@@ -105,7 +105,7 @@ const Experience = () => {
                 <div className="hidden md:block md:w-5/12" />
 
                 {/* Center dot - shared between mobile/desktop layout logic */}
-                <div className="absolute -left-[32px] md:static md:w-2/12 flex items-center justify-center flex-shrink-0 md:z-20">
+                <div className="absolute -left-[32px] md:relative md:w-2/12 flex items-center justify-center flex-shrink-0 md:z-20">
                    <div className="hidden md:block absolute h-px bg-white/10 w-1/2 top-1/2 -translate-y-1/2" style={{
                       left: i % 2 === 0 ? '0' : '50%',
                    }}/>
