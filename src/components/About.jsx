@@ -26,7 +26,7 @@ const About = () => {
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
            style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
       
-      <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-accent-blue/5 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none" />
+      <div className="hidden md:block absolute top-0 right-0 w-[40rem] h-[40rem] bg-accent-blue/5 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none will-change-transform" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         {/* Section Header */}
         <motion.div

@@ -132,7 +132,7 @@ const Skills = () => {
               </h3>
 
               {/* Group Container Box */}
-              <div className={`w-full p-4 rounded-[2rem] bg-[#121826]/80 backdrop-blur-md border ${category.borderColor} shadow-lg transition-all duration-500 ${category.shadowColor} relative`}>
+              <div className={`w-full p-4 rounded-[2rem] bg-[#121826]/80 md:backdrop-blur-md border ${category.borderColor} shadow-lg transition-all duration-500 ${category.shadowColor} relative`}>
                 
                 {/* Decorative Side Connecting Lines (Abstract aesthetics) */}
                 <div className="hidden lg:block absolute top-[40px] bottom-[40px] -left-12 -right-12 pointer-events-none">

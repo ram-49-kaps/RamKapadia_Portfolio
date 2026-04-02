@@ -197,7 +197,7 @@ const Hero = () => {
                 y: [-15, 15, -15],
               }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative z-10 w-56 h-56 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] border-4 border-white/5 shadow-2xl hover:border-accent-purple/40 hover:shadow-accent-purple/20 transition-all duration-700 ease-in-out group animate-morph overflow-hidden bg-dark-800"
+              className="relative z-10 w-56 h-56 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] border-4 border-white/5 shadow-2xl hover:border-accent-purple/40 hover:shadow-accent-purple/20 transition-all duration-700 ease-in-out group md:animate-morph overflow-hidden bg-dark-800"
             >
               {/* Inner subtle border gradient */}
               <div className="absolute inset-0 bg-gradient-to-tr from-accent-blue/20 to-accent-purple/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-20 mix-blend-overlay"></div>

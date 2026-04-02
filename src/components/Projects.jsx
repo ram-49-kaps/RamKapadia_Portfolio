@@ -104,11 +104,11 @@ const Projects = () => {
                 <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-20 mix-blend-overlay`} />
                 
                 {/* Glass overlay that hides the image partially until hovered */}
-                <div className="absolute inset-0 bg-dark-900/60 backdrop-blur-[4px] opacity-100 group-hover:opacity-0 transition-all duration-500" />
+                <div className="absolute inset-0 bg-dark-900/60 md:backdrop-blur-[4px] opacity-100 group-hover:opacity-0 transition-all duration-500" />
                 
                 {/* Center graphic (fades out on hover to show the clear image) */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-100 group-hover:opacity-0 transition-opacity duration-500">
-                   <div className={`w-32 h-32 rounded-full bg-gradient-to-tr ${project.color} blur-3xl opacity-40`} />
+                   <div className={`hidden md:block w-32 h-32 rounded-full bg-gradient-to-tr ${project.color} blur-3xl opacity-40 will-change-transform`} />
                    <div className="absolute text-3xl font-heading font-bold text-white/40 tracking-widest uppercase select-none drop-shadow-lg">
                      {project.category.split(' ')[0]}
                    </div>
@@ -120,7 +120,7 @@ const Projects = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all shadow-xl"
+                    className="w-12 h-12 rounded-full bg-white/10 md:backdrop-blur-xl border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all shadow-xl"
                   >
                     <FaGithub size={20} />
                   </a>
@@ -129,7 +129,7 @@ const Projects = () => {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all shadow-xl"
+                      className="w-12 h-12 rounded-full bg-white/10 md:backdrop-blur-xl border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all shadow-xl"
                     >
                       <FaExternalLinkAlt size={18} />
                     </a>
