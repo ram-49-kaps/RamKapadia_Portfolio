@@ -57,12 +57,12 @@ const Hero = () => {
         <motion.div
           animate={{ x: [-20, 20, -20], y: [-20, 20, -20] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="hidden md:block absolute top-1/4 -left-20 w-[30rem] h-[30rem] bg-accent-purple/10 rounded-full blur-[100px] will-change-transform"
+          className="absolute top-1/4 -left-20 w-[30rem] h-[30rem] bg-[radial-gradient(circle_at_center,_rgba(139,92,246,0.15)_0%,_transparent_60%)] rounded-full will-change-transform pointer-events-none"
         />
         <motion.div
           animate={{ x: [20, -20, 20], y: [20, -20, 20] }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-          className="hidden md:block absolute bottom-1/4 -right-20 w-[35rem] h-[35rem] bg-accent-blue/10 rounded-full blur-[100px] will-change-transform"
+          className="absolute bottom-1/4 -right-20 w-[35rem] h-[35rem] bg-[radial-gradient(circle_at_center,_rgba(59,130,246,0.15)_0%,_transparent_60%)] rounded-full will-change-transform pointer-events-none"
         />
 
         {/* Subtle noise texture overlay */}
@@ -188,7 +188,7 @@ const Hero = () => {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-              className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-gradient-to-br from-accent-cyan/15 via-accent-purple/15 to-accent-blue/15 rounded-full blur-3xl pointer-events-none z-0 will-change-transform"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-[radial-gradient(circle_at_center,_rgba(6,182,212,0.1)_0%,_rgba(139,92,246,0.1)_30%,_rgba(59,130,246,0.1)_60%,_transparent_80%)] rounded-full pointer-events-none z-0 will-change-transform"
             />
 
             {/* Image Container with Floating and Morphing Animation */}
@@ -197,7 +197,7 @@ const Hero = () => {
                 y: [-15, 15, -15],
               }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative z-10 w-56 h-56 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] border-4 border-white/5 shadow-2xl hover:border-accent-purple/40 hover:shadow-accent-purple/20 transition-all duration-700 ease-in-out group md:animate-morph overflow-hidden bg-dark-800"
+              className="relative z-10 w-56 h-56 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] border-4 border-white/5 shadow-2xl hover:border-accent-purple/40 hover:shadow-accent-purple/20 transition-all duration-700 ease-in-out group animate-morph rounded-[3rem] overflow-hidden bg-dark-800"
             >
               {/* Inner subtle border gradient */}
               <div className="absolute inset-0 bg-gradient-to-tr from-accent-blue/20 to-accent-purple/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-20 mix-blend-overlay"></div>

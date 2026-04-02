@@ -44,7 +44,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="section-padding relative overflow-hidden">
-      <div className="hidden md:block absolute top-1/2 right-0 w-[40rem] h-[40rem] bg-accent-purple/5 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none will-change-transform" />
+      <div className="absolute top-1/2 right-0 w-[40rem] h-[40rem] bg-[radial-gradient(circle_at_center,_rgba(139,92,246,0.08)_0%,_transparent_60%)] rounded-full -translate-y-1/2 pointer-events-none will-change-transform" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative" ref={ref}>
         <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
