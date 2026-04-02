@@ -27,7 +27,7 @@ const Loader = ({ onComplete }) => {
           
           {/* Logo container */}
           <motion.div 
-            className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-accent-blue/10 to-accent-purple/10 rounded-full blur-md"
+            className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-accent-blue/20 to-accent-purple/20 rounded-full will-change-transform"
             animate={{ scale: [1, 1.1, 1] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           />

@@ -12,11 +12,23 @@ function App() {
 
   // Cursor glow effect
   useEffect(() => {
+    let animationFrameId;
     const handleMouseMove = (e) => {
-      setCursorPos({ x: e.clientX, y: e.clientY });
+      if (window.innerWidth < 1024) return;
+      animationFrameId = requestAnimationFrame(() => {
+        setCursorPos({ x: e.clientX, y: e.clientY });
+      });
     };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    
+    // Only attach listener if on desktop or large screen
+    if (window.matchMedia("(min-width: 1024px)").matches) {
+      window.addEventListener('mousemove', handleMouseMove);
+    }
+    
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+    };
   }, []);
 
   return (

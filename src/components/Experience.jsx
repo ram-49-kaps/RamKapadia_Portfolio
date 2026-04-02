@@ -113,7 +113,7 @@ const Experience = () => {
                       <motion.div 
                          animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0.1, 0.3] }}
                          transition={{ duration: 3, repeat: Infinity }}
-                         className="absolute w-10 h-10 rounded-full bg-accent-blue/20 blur-sm"
+                         className="absolute w-10 h-10 rounded-full bg-accent-blue/30 will-change-transform"
                       />
                       <div className="relative z-10 w-4 h-4 rounded-full bg-dark-900 border-[3px] border-accent-blue ring-4 ring-dark-900 shadow-[0_0_15px_rgba(59,130,246,0.5)]" />
                    </div>

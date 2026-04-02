@@ -57,12 +57,12 @@ const Hero = () => {
         <motion.div
           animate={{ x: [-20, 20, -20], y: [-20, 20, -20] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/4 -left-20 w-[30rem] h-[30rem] bg-accent-purple/10 rounded-full blur-[100px]"
+          className="hidden md:block absolute top-1/4 -left-20 w-[30rem] h-[30rem] bg-accent-purple/10 rounded-full blur-[100px] will-change-transform"
         />
         <motion.div
           animate={{ x: [20, -20, 20], y: [20, -20, 20] }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-1/4 -right-20 w-[35rem] h-[35rem] bg-accent-blue/10 rounded-full blur-[100px]"
+          className="hidden md:block absolute bottom-1/4 -right-20 w-[35rem] h-[35rem] bg-accent-blue/10 rounded-full blur-[100px] will-change-transform"
         />
 
         {/* Subtle noise texture overlay */}
@@ -188,7 +188,7 @@ const Hero = () => {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-gradient-to-br from-accent-cyan/15 via-accent-purple/15 to-accent-blue/15 rounded-full blur-3xl pointer-events-none z-0"
+              className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-gradient-to-br from-accent-cyan/15 via-accent-purple/15 to-accent-blue/15 rounded-full blur-3xl pointer-events-none z-0 will-change-transform"
             />
 
             {/* Image Container with Floating and Morphing Animation */}
