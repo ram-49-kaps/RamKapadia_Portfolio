@@ -59,10 +59,15 @@ const Navbar = () => {
           <motion.a
             href="#home"
             onClick={(e) => handleClick(e, '#home')}
-            className="flex items-center group"
+            className="flex items-center gap-3 group"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
+            <img 
+              src="/logo-rk.png" 
+              alt="RK Logo" 
+              className="w-8 h-8 rounded-lg object-contain"
+            />
             <div className="flex flex-col justify-center">
               <span className="text-white font-heading font-extrabold text-lg tracking-tight leading-none group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r from-accent-blue to-accent-purple transition-colors duration-300">RAM</span>
               <span className="text-xs text-gray-500 font-medium tracking-[0.2em] mt-0.5">KAPADIA</span>

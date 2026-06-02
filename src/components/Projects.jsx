@@ -47,6 +47,28 @@ const projects = [
     color: 'from-emerald-400 to-teal-500',
     shadow: 'shadow-emerald-500/20',
   },
+  {
+    title: 'DharmaAI',
+    category: 'AI Legal Assistant',
+    description: 'An advanced legal reasoning chatbot for Indian jurisprudence, powered by Groq (Llama 3) and a custom RAG pipeline with ChromaDB. Features intent-based routing via LangChain, IRAC/IDAR reasoning templates, and Indian Knowledge Systems (IKS) integration — bridging modern law with ancient Dharmic principles.',
+    technologies: ['React', 'FastAPI', 'LangChain', 'Groq', 'ChromaDB', 'Llama 3'],
+    github: 'https://github.com/ram-49-kaps',
+    demo: 'https://dharma-ai-mu.vercel.app/',
+    image: '/projects/photo_6_dharmaai.png',
+    color: 'from-amber-500 to-orange-500',
+    shadow: 'shadow-amber-500/20',
+  },
+  {
+    title: 'AI Voice Booking Agent',
+    category: 'AI Voice Agent',
+    description: 'An AI-powered salon booking agent featuring real-time voice calling via Vapi.ai, a FastAPI backend for appointment management, Twilio SMS confirmations, and a React Native admin dashboard with push notifications — delivering a fully autonomous, hands-free booking experience.',
+    technologies: ['Vapi.ai', 'FastAPI', 'Twilio', 'React Native', 'Python', 'PostgreSQL'],
+    github: 'https://github.com/ram-49-kaps',
+    demo: 'https://vapi.ai/?demo=true&shareKey=b2c1d8f0-a28e-416e-a31e-99ab8c22e219&assistantId=e134e224-7e4d-45e2-a2e4-128d654b84cb',
+    image: '/projects/photo_7_voicebookai.png',
+    color: 'from-violet-500 to-indigo-500',
+    shadow: 'shadow-violet-500/20',
+  },
 ];
 
 const Projects = () => {

@@ -8,7 +8,12 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Name */}
-          <div className="flex items-center">
+          <div className="flex items-center gap-3">
+            <img 
+              src="/logo-rk.png" 
+              alt="RK Logo" 
+              className="w-7 h-7 rounded-md object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+            />
             <div>
               <span className="text-sm font-heading font-bold text-white">Ram Kapadia</span>
               <p className="text-gray-500 text-[10px] font-mono">AI/ML Engineer</p>

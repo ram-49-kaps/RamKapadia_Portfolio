@@ -13,7 +13,8 @@ const categories = [
     skills: [
       { name: 'React', subtitle: 'Component-based UI', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
       { name: 'JavaScript', subtitle: 'Dynamic Web Logic', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg' },
-      { name: 'TypeScript', subtitle: 'Static Typing', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg' }
+      { name: 'TypeScript', subtitle: 'Static Typing', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg' },
+      { name: 'Tailwind CSS', subtitle: 'Utility Styling', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg' }
     ]
   },
   {
@@ -27,7 +28,44 @@ const categories = [
       { name: 'Node.js', subtitle: 'Server-side JS', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg' },
       { name: 'Python', subtitle: 'General Purpose Logic', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' },
       { name: 'MongoDB', subtitle: 'NoSQL Database', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg' },
-      { name: 'FastAPI', subtitle: 'Web Framework', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg' }
+      { name: 'FastAPI', subtitle: 'Web Framework', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg' },
+      { name: 'MySQL', subtitle: 'Relational Database', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg' }
+    ]
+  },
+  {
+    title: 'AI & AGENTIC AI',
+    color: 'from-violet-400 to-indigo-400',
+    borderColor: 'border-violet-500/30',
+    shadowColor: 'group-hover:shadow-[0_0_20px_rgba(139,92,246,0.2)]',
+    textColor: 'text-violet-400',
+    pathColor: 'stroke-violet-400/50',
+    skills: [
+      {
+        name: 'LangChain',
+        subtitle: 'LLM Orchestration',
+        icon: (
+          <svg className="w-10 h-10 mb-3 text-emerald-400 drop-shadow-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+          </svg>
+        )
+      },
+      {
+        name: 'LangGraph',
+        subtitle: 'Multi-Agent Flows',
+        icon: (
+          <svg className="w-10 h-10 mb-3 text-cyan-400 drop-shadow-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="5" r="2.5" className="fill-cyan-400/20" />
+            <circle cx="5" cy="18" r="2.5" className="fill-cyan-400/20" />
+            <circle cx="19" cy="18" r="2.5" className="fill-cyan-400/20" />
+            <line x1="12" y1="7.5" x2="6.5" y2="15.5" />
+            <line x1="12" y1="7.5" x2="17.5" y2="15.5" />
+            <line x1="7.5" y1="18" x2="16.5" y2="18" />
+          </svg>
+        )
+      },
+      { name: 'PyTorch', subtitle: 'Machine Learning', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg' },
+      { name: 'TensorFlow', subtitle: 'Deep Learning', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg' }
     ]
   },
   {
@@ -40,8 +78,9 @@ const categories = [
     skills: [
       { name: 'Docker', subtitle: 'Containerization', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg' },
       { name: 'Git', subtitle: 'Version Control', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg' },
-      { name: 'PyTorch', subtitle: 'Machine Learning', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg' },
-      { name: 'Postman', subtitle: 'API Testing', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg' }
+      { name: 'Postman', subtitle: 'API Testing', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg' },
+      { name: 'Google Cloud', subtitle: 'Cloud Infrastructure', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg' },
+      { name: 'AWS', subtitle: 'Cloud Deployment', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg' }
     ]
   }
 ];
@@ -80,11 +119,11 @@ const Skills = () => {
           </div>
 
           {/* Desktop SVG Routing Lines from Hub to Columns */}
-          <div className="hidden lg:block absolute top-full left-1/2 -translate-x-1/2 w-[600px] h-24 overflow-visible pointer-events-none">
-            <svg className="w-full h-full" viewBox="0 0 600 96">
-              {/* Left Line */}
+          <div className="hidden lg:block absolute top-full left-1/2 -translate-x-1/2 w-[800px] h-24 overflow-visible pointer-events-none">
+            <svg className="w-full h-full" viewBox="0 0 800 96">
+              {/* Leftmost Line */}
               <motion.path 
-                d={generatePath(300, 0, 100, 96)}
+                d={generatePath(400, 0, 100, 96)}
                 className="stroke-cyan-400/40"
                 strokeWidth="2"
                 fill="none"
@@ -92,9 +131,9 @@ const Skills = () => {
                 animate={isInView ? { pathLength: 1 } : {}}
                 transition={{ duration: 1.5, ease: "easeInOut", delay: 0.2 }}
               />
-              {/* Center Line */}
+              {/* Inner-Left Line */}
               <motion.path 
-                d="M 300 0 L 300 96"
+                d={generatePath(400, 0, 300, 96)}
                 className="stroke-amber-400/40"
                 strokeWidth="2"
                 fill="none"
@@ -102,9 +141,19 @@ const Skills = () => {
                 animate={isInView ? { pathLength: 1 } : {}}
                 transition={{ duration: 1.5, ease: "easeInOut", delay: 0.2 }}
               />
-              {/* Right Line */}
+              {/* Inner-Right Line */}
               <motion.path 
-                d={generatePath(300, 0, 500, 96)}
+                d={generatePath(400, 0, 500, 96)}
+                className="stroke-violet-400/40"
+                strokeWidth="2"
+                fill="none"
+                initial={{ pathLength: 0 }}
+                animate={isInView ? { pathLength: 1 } : {}}
+                transition={{ duration: 1.5, ease: "easeInOut", delay: 0.2 }}
+              />
+              {/* Rightmost Line */}
+              <motion.path 
+                d={generatePath(400, 0, 700, 96)}
                 className="stroke-fuchsia-400/40"
                 strokeWidth="2"
                 fill="none"
@@ -117,7 +166,7 @@ const Skills = () => {
         </motion.div>
 
         {/* Categories Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 w-full max-w-5xl relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 w-full max-w-7xl relative z-10">
           
           {categories.map((category, catIndex) => (
             <motion.div 
@@ -168,7 +217,11 @@ const Skills = () => {
                       transition={{ type: "spring", stiffness: 400, damping: 25 }}
                       className="flex flex-col items-center justify-center p-4 rounded-3xl bg-[#0a0f18] border border-white/5 hover:border-white/20 transition-colors shadow-inner"
                     >
-                      <img src={skill.src} alt={skill.name} className="w-10 h-10 object-contain mb-3 drop-shadow-md" />
+                      {skill.icon ? (
+                        skill.icon
+                      ) : (
+                        <img src={skill.src} alt={skill.name} className="w-10 h-10 object-contain mb-3 drop-shadow-md" />
+                      )}
                       <span className="text-sm font-semibold text-white mb-0.5">{skill.name}</span>
                       <span className="text-[10px] text-gray-500 font-medium tracking-wide uppercase">{skill.subtitle}</span>
                     </motion.div>

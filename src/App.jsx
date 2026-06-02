@@ -45,7 +45,7 @@ function App() {
       )}
 
       {loading && <Loader onComplete={handleLoaderComplete} />}
-      {!loading && <Home />}
+      <Home />
     </div>
   );
 }
