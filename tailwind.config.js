@@ -8,22 +8,20 @@ export default {
     extend: {
       colors: {
         dark: {
-          900: '#0a0a0f',
-          800: '#0f0f1a',
-          700: '#141425',
-          600: '#1a1a2e',
-          500: '#222240',
+          900: '#111213',
+          800: '#1a1c1e',
+          700: '#242628',
+          600: '#2e3032',
+          500: '#3a3c3e',
         },
         accent: {
-          blue: '#3b82f6',
-          purple: '#8b5cf6',
-          cyan: '#06b6d4',
-          pink: '#ec4899',
+          neon: '#00ff88',
+          green: '#1fdf84',
         },
       },
       fontFamily: {
-        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
-        heading: ['Space Grotesk', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        heading: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
       animation: {

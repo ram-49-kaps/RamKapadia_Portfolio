@@ -1,219 +1,105 @@
-import { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaArrowRight } from 'react-icons/fa';
-import { HiDocumentDownload } from 'react-icons/hi';
-
-const roles = [
-  'AI/ML Engineer',
-  'Full Stack Developer',
-  'LLM & RAG Specialist',
-  'Problem Solver',
-];
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
+import { FaAngleDown } from 'react-icons/fa';
 
 const Hero = () => {
-  const typingRef = useRef(null);
+  const containerRef = useRef(null);
+  
+  // Track scroll progress of the Hero section
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
 
-  useEffect(() => {
-    let roleIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let timeoutId;
+  // Transform background scale and opacity on scroll
+  const bgScale = useTransform(scrollYProgress, [0, 1], [1, 0.95]);
+  const bgOpacity = useTransform(scrollYProgress, [0, 1], [0.6, 0.1]);
 
-    const type = () => {
-      const current = roles[roleIndex];
-      if (!typingRef.current) return;
+  // Transform typography position and opacity on scroll
+  const textOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+  const textY = useTransform(scrollYProgress, [0, 0.6], [0, -50]);
 
-      if (isDeleting) {
-        typingRef.current.textContent = current.substring(0, charIndex - 1);
-        charIndex--;
-      } else {
-        typingRef.current.textContent = current.substring(0, charIndex + 1);
-        charIndex++;
-      }
-
-      let speed = isDeleting ? 30 : 70;
-
-      if (!isDeleting && charIndex === current.length) {
-        speed = 2000;
-        isDeleting = true;
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-        speed = 400;
-      }
-
-      timeoutId = setTimeout(type, speed);
-    };
-
-    timeoutId = setTimeout(type, 500);
-    return () => clearTimeout(timeoutId);
-  }, []);
+  // Transform scroll indicator opacity on scroll
+  const indicatorOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   return (
-    <section id="home" className="relative w-full overflow-hidden flex items-start lg:items-center justify-center pt-28 sm:pt-32 lg:pt-40 pb-16 sm:pb-20 min-h-screen">
-      {/* Refined Premium Background */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
-        {/* Soft dynamic gradient orbs */}
-        <motion.div
-          animate={{ x: [-20, 20, -20], y: [-20, 20, -20] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/4 -left-20 w-[30rem] h-[30rem] bg-[radial-gradient(circle_at_center,_rgba(139,92,246,0.15)_0%,_transparent_60%)] rounded-full will-change-transform pointer-events-none"
-        />
-        <motion.div
-          animate={{ x: [20, -20, 20], y: [20, -20, 20] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-1/4 -right-20 w-[35rem] h-[35rem] bg-[radial-gradient(circle_at_center,_rgba(59,130,246,0.15)_0%,_transparent_60%)] rounded-full will-change-transform pointer-events-none"
-        />
-
-        {/* Subtle noise texture overlay */}
-        <div className="absolute inset-0 opacity-[0.015] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
-      </div>
-
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mt-5 lg:mt-0">
-
-          {/* Left Column: Text Content */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
-            {/* Top Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="mb-8 cursor-default"
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-white/5 bg-white/[0.02] backdrop-blur-md shadow-2xl overflow-hidden group">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-cyan opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-cyan"></span>
-                </span>
-                <span className="text-xs sm:text-sm font-medium text-gray-300 text-center">Available for Summer Internship 2026</span>
-              </div>
-            </motion.div>
-
-            {/* Main Typography */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="relative w-full max-w-2xl mx-auto lg:mx-0"
-            >
-              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-extrabold mb-4 sm:mb-8 font-heading tracking-tight leading-[1.2]">
-                <span className="text-white block pb-1 sm:pb-2">Crafting Intelligent</span>
-                <span className="gradient-text pb-1 sm:pb-2 block">Digital Experiences.</span>
-              </h1>
-
-              {/* Dynamic typing row */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-2 gap-y-1 sm:gap-x-4 text-base sm:text-xl md:text-2xl text-gray-400 mb-6 sm:mb-8 min-h-[3.5rem] font-medium">
-                <div className="flex items-center gap-x-1 sm:gap-x-2">
-                  <span>I'm</span>
-                  <span className="text-white font-semibold">Ram Kapadia,</span>
-                </div>
-                <span className="hidden sm:inline text-gray-600">—</span>
-                <div className="flex items-center gap-2 mt-1 sm:mt-0">
-                  <span ref={typingRef} className="text-accent-cyan mr-1" />
-                  <span className="animate-pulse text-accent-cyan font-bold">|</span>
-                </div>
-              </div>
-
-              <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto lg:mx-0 mb-8 sm:mb-12 leading-relaxed sm:leading-loose tracking-wide text-center lg:text-left">
-                M.Sc. Artificial Intelligence &amp; Machine Learning student. I bridge the gap between complex AI models (LLMs, RAG) and beautiful, high-performance web applications.
-              </p>
-            </motion.div>
-
-            {/* Action Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-12 w-full sm:w-auto"
-            >
-              <a
-                href="#projects"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="group relative px-8 py-4 rounded-full font-semibold text-white overflow-hidden transition-all duration-300 w-full sm:w-auto flex justify-center shadow-lg shadow-accent-purple/20 hover:shadow-accent-purple/40 hover:-translate-y-1"
-              >
-                <span className="absolute inset-0 bg-gradient-to-r from-accent-blue via-accent-purple to-accent-cyan bg-300% animate-gradient" />
-                <span className="relative flex items-center gap-2">
-                  View Work
-                  <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
-                </span>
-              </a>
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group px-8 py-4 rounded-full font-semibold text-white bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 w-full sm:w-auto flex justify-center items-center gap-2 hover:-translate-y-1"
-              >
-                <HiDocumentDownload className="text-xl text-gray-400 group-hover:text-white transition-colors" />
-                <span>Resume</span>
-              </a>
-            </motion.div>
-
-            {/* Minimal Social Links */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 1 }}
-              className="flex justify-center lg:justify-start gap-6"
-            >
-              {[
-                { icon: FaGithub, href: 'https://github.com/ram-49-kaps', label: 'GitHub' },
-                { icon: FaLinkedin, href: 'https://linkedin.com/in/ram-kapadia-a382332a3', label: 'LinkedIn' },
-              ].map(({ icon: Icon, href, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center justify-center p-3 rounded-full bg-white/[0.02] border border-white/5 hover:border-white/20 transition-all duration-300"
-                  aria-label={label}
-                >
-                  <Icon className="text-xl text-gray-400 group-hover:text-white transition-colors" />
-                </a>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Right Column: Profile Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8, x: 50 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="order-1 lg:order-2 flex justify-center lg:justify-end relative"
-          >
-            {/* Subtle rotating glow behind image */}
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-[radial-gradient(circle_at_center,_rgba(6,182,212,0.1)_0%,_rgba(139,92,246,0.1)_30%,_rgba(59,130,246,0.1)_60%,_transparent_80%)] rounded-full pointer-events-none z-0 will-change-transform"
-            />
-
-            {/* Image Container with Floating and Morphing Animation */}
-            <motion.div
-              animate={{
-                y: [-15, 15, -15],
-              }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative z-10 w-56 h-56 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] border-4 border-white/5 shadow-2xl hover:border-accent-purple/40 hover:shadow-accent-purple/20 transition-all duration-700 ease-in-out group animate-morph rounded-[3rem] overflow-hidden bg-dark-800"
-            >
-              {/* Inner subtle border gradient */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-accent-blue/20 to-accent-purple/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-20 mix-blend-overlay"></div>
-
-              <motion.img
-                src="/profile-optimized.jpg"
-                alt="Ram Kapadia"
-                fetchpriority="high"
-                loading="eager"
-                className="w-full h-full object-cover object-top scale-[1.05] group-hover:scale-[1.12] group-hover:rotate-2 transition-transform duration-700 ease-out"
-              />
-            </motion.div>
-          </motion.div>
-
+    <section 
+      ref={containerRef}
+      id="home" 
+      className="relative w-full h-screen min-h-screen overflow-hidden flex items-center justify-start bg-[#1A1C1E]"
+    >
+      {/* Full Screen Background Image with scroll-linked scaling & opacity */}
+      <motion.div 
+        style={{ scale: bgScale, opacity: bgOpacity }}
+        className="absolute inset-0 z-0 origin-center w-full h-full"
+      >
+        <div className="absolute inset-0 w-full h-full translate-x-[15%] md:translate-x-[25%] lg:translate-x-[30%]">
+          <motion.img 
+            initial={{ scale: 1.05, opacity: 0 }}
+            animate={{ scale: 1.0, opacity: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            src="/profile-optimized.jpg" 
+            alt="Ram Kapadia" 
+            className="w-full h-full object-cover object-[center_20%]" 
+            style={{
+              WebkitMaskImage: 'linear-gradient(to right, transparent, black 20%, black)',
+              maskImage: 'linear-gradient(to right, transparent, black 20%, black)'
+            }}
+          />
         </div>
-      </div>
+        {/* Cinematic gradients to blend the image into the dark theme */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1A1C1E] via-transparent to-[#1A1C1E]/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1A1C1E] via-[#1A1C1E]/40 to-transparent sm:via-[#1A1C1E]/60" />
+      </motion.div>
+
+      {/* Main Content with scroll-linked opacity & slide */}
+      <motion.div 
+        style={{ opacity: textOpacity, y: textY }}
+        className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mt-12 sm:mt-20"
+      >
+        <div className="max-w-4xl relative">
+          {/* Subtle glow behind text */}
+          <div className="absolute -inset-10 bg-white/5 blur-3xl rounded-full opacity-50 pointer-events-none" />
+          
+          <h1 className="relative text-[16vw] sm:text-[8rem] md:text-[9rem] lg:text-[11rem] font-bold text-white leading-none tracking-tighter drop-shadow-2xl">
+            Welcome
+          </h1>
+          
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
+            className="mt-4 sm:mt-8 ml-2 sm:ml-4 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6"
+          >
+            <div className="hidden sm:block h-px w-16 sm:w-24 bg-white/40" />
+            <div className="flex flex-col">
+               <p className="text-xl sm:text-2xl md:text-3xl text-gray-300 font-medium tracking-wide">
+                 I'm <span className="text-white font-bold">Ram Kapadia</span>
+               </p>
+               <p className="text-sm sm:text-base text-gray-500 uppercase tracking-widest mt-1">
+                 AI Developer
+               </p>
+            </div>
+          </motion.div>
+        </div>
+      </motion.div>
+
+      {/* Scroll Down Indicator */}
+      <motion.div 
+        style={{ opacity: indicatorOpacity }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 cursor-pointer"
+        onClick={() => {
+          document.getElementById('intro-section')?.scrollIntoView({ behavior: 'smooth' });
+        }}
+      >
+        <motion.div
+          animate={{ y: [0, 12, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="p-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-colors backdrop-blur-md"
+        >
+          <FaAngleDown className="text-xl sm:text-2xl text-white/70" />
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

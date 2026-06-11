@@ -1,5 +1,11 @@
 import { useState, useEffect, useCallback } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import Navbar from './components/Navbar';
 import Home from './pages/Home';
+import Work from './pages/Work';
+import About from './pages/About';
+import Contact from './pages/Contact';
 import Loader from './components/Loader';
 
 function App() {
@@ -31,8 +37,10 @@ function App() {
     };
   }, []);
 
+  const location = useLocation();
+
   return (
-    <div className="animated-bg min-h-screen relative overflow-x-hidden w-full">
+    <div className="animated-bg min-h-screen relative overflow-x-hidden w-full bg-dark-800 text-white font-sans selection:bg-accent-neon selection:text-dark-900">
       {/* Cursor glow */}
       {!loading && (
         <div
@@ -45,7 +53,19 @@ function App() {
       )}
 
       {loading && <Loader onComplete={handleLoaderComplete} />}
-      <Home />
+      {!loading && (
+        <>
+          <Navbar />
+          <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
+              <Route path="/" element={<Home />} />
+              <Route path="/work" element={<Work />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </AnimatePresence>
+        </>
+      )}
     </div>
   );
 }

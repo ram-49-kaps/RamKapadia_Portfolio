@@ -1,4 +1,5 @@
 import { FaGithub, FaLinkedin, FaEnvelope, FaHeart } from 'react-icons/fa';
+import Logo from './Logo';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,11 +10,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Name */}
           <div className="flex items-center gap-3">
-            <img 
-              src="/logo-rk.png" 
-              alt="RK Logo" 
-              className="w-7 h-7 rounded-md object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
-            />
+            <Logo className="w-9 h-9 border-2 opacity-80 hover:opacity-100 transition-opacity duration-300" textClassName="text-base mt-0.5" />
             <div>
               <span className="text-sm font-heading font-bold text-white">Ram Kapadia</span>
               <p className="text-gray-500 text-[10px] font-mono">AI/ML Engineer</p>

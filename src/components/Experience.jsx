@@ -3,11 +3,24 @@ import { useRef } from 'react';
 
 const timelineData = [
   {
+    title: 'AI Developer Intern',
+    organization: 'Allied Works',
+    period: 'Present',
+    description: 'Working on AI-powered applications, agentic AI systems, LLM integrations, backend development, and real-world AI solutions. Contributing to the design, development, and deployment of intelligent systems while gaining hands-on industry experience.',
+    category: 'Experience',
+    logo: (
+      <img src="/image.png" alt="Allied Works" className="w-16 sm:w-20 h-auto mr-4 shrink-0 rounded" />
+    )
+  },
+  {
     title: 'M.Sc. Artificial Intelligence & Machine Learning',
     organization: 'Christ University, Bengaluru',
     period: 'Jun 2025 — Mar 2027',
     description: 'Pursuing advanced studies in AI/ML, covering deep learning, NLP, computer vision, and intelligent systems.',
     category: 'Education',
+    logo: (
+      <img src="/image copy.png" alt="Christ University" className="w-16 sm:w-20 h-auto mr-4 shrink-0 rounded" />
+    )
   },
   {
     title: 'Bachelor of Computer Applications (BCA)',
@@ -15,6 +28,9 @@ const timelineData = [
     period: 'Apr 2022 — Mar 2025 • 8.26 CGPA',
     description: 'Built a strong foundation in computer science, programming, databases, and software engineering.',
     category: 'Education',
+    logo: (
+      <img src="/image copy 2..png" alt="BCA College" className="w-16 sm:w-20 h-auto mr-4 shrink-0 rounded" />
+    )
   },
   {
     title: 'Social Media Handler',
@@ -68,11 +84,11 @@ const Experience = () => {
           className="mb-16 md:mb-24 text-center"
         >
           <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="h-px w-12 bg-accent-blue" />
-            <h2 className="text-sm font-semibold text-accent-blue tracking-widest uppercase">
+            <div className="h-px w-12 bg-accent-neon" />
+            <h2 className="text-sm font-semibold text-accent-neon tracking-widest uppercase">
               Milestones
             </h2>
-            <div className="h-px w-12 bg-accent-blue" />
+            <div className="h-px w-12 bg-accent-neon" />
           </div>
           <h3 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold max-w-2xl mx-auto leading-tight text-white">
             Experience &amp; <span className="text-gray-500">Education.</span>
@@ -86,7 +102,7 @@ const Experience = () => {
              <motion.div 
                 animate={{ y: ['-100%', '100%'] }}
                 transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                className="w-full h-1/2 bg-gradient-to-b from-transparent via-accent-blue/40 to-transparent"
+                className="w-full h-1/2 bg-gradient-to-b from-transparent via-accent-neon/40 to-transparent"
              />
           </div>
 
@@ -113,9 +129,9 @@ const Experience = () => {
                       <motion.div 
                          animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0.1, 0.3] }}
                          transition={{ duration: 3, repeat: Infinity }}
-                         className="absolute w-10 h-10 rounded-full bg-accent-blue/30 will-change-transform"
+                         className="absolute w-10 h-10 rounded-full bg-accent-neon/30 will-change-transform"
                       />
-                      <div className="relative z-10 w-4 h-4 rounded-full bg-dark-900 border-[3px] border-accent-blue ring-4 ring-dark-900 shadow-[0_0_15px_rgba(59,130,246,0.5)]" />
+                      <div className="relative z-10 w-4 h-4 rounded-full bg-dark-900 border-[3px] border-accent-neon ring-4 ring-dark-900 shadow-[0_0_15px_rgba(0,255,136,0.5)]" />
                    </div>
                 </div>
 
@@ -128,16 +144,17 @@ const Experience = () => {
                     </div>
 
                     <div className="relative z-10">
-                      <span className="inline-block px-3 py-1 text-[10px] sm:text-xs font-bold rounded-full bg-white/5 text-gray-400 mb-4 border border-white/10 uppercase tracking-widest group-hover:text-accent-blue transition-colors">
+                      <span className="inline-block px-3 py-1 text-[10px] sm:text-xs font-bold rounded-full bg-white/5 text-gray-400 mb-4 border border-white/10 uppercase tracking-widest group-hover:text-accent-neon transition-colors">
                         {item.period}
                       </span>
                       
-                      <h4 className="text-xl md:text-2xl font-extrabold text-white mb-2 font-heading tracking-tight">
+                      <h4 className="text-xl md:text-2xl font-extrabold text-white mb-2 tracking-tight">
                         {item.title}
                       </h4>
                       
-                      <div className="text-accent-blue font-bold text-sm mb-4 tracking-wide">
-                        {item.organization}
+                      <div className="flex items-center text-accent-neon font-bold text-sm mb-4 tracking-wide">
+                        {item.logo && item.logo}
+                        <span>{item.organization}</span>
                       </div>
                       
                       <p className="text-gray-400 leading-relaxed text-sm md:text-base font-medium">

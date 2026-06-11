@@ -53,7 +53,7 @@ const projects = [
     description: 'An advanced legal reasoning chatbot for Indian jurisprudence, powered by Groq (Llama 3) and a custom RAG pipeline with ChromaDB. Features intent-based routing via LangChain, IRAC/IDAR reasoning templates, and Indian Knowledge Systems (IKS) integration — bridging modern law with ancient Dharmic principles.',
     technologies: ['React', 'FastAPI', 'LangChain', 'Groq', 'ChromaDB', 'Llama 3'],
     github: 'https://github.com/ram-49-kaps',
-    demo: 'https://dharma-ai-mu.vercel.app/',
+    demo: 'https://dharma-ai-nine.vercel.app/',
     image: '/projects/photo_6_dharmaai.png',
     color: 'from-amber-500 to-orange-500',
     shadow: 'shadow-amber-500/20',
@@ -66,8 +66,6 @@ const projects = [
     github: 'https://github.com/ram-49-kaps',
     demo: 'https://vapi.ai/?demo=true&shareKey=b2c1d8f0-a28e-416e-a31e-99ab8c22e219&assistantId=e134e224-7e4d-45e2-a2e4-128d654b84cb',
     image: '/projects/photo_7_voicebookai.png',
-    color: 'from-violet-500 to-indigo-500',
-    shadow: 'shadow-violet-500/20',
   },
 ];
 
@@ -87,12 +85,12 @@ const Projects = () => {
         >
           <div>
             <div className="flex items-center justify-center md:justify-start gap-4 mb-4">
-              <div className="h-px w-12 bg-accent-purple" />
-              <h2 className="text-sm font-semibold text-accent-purple tracking-widest uppercase">
+              <div className="h-px w-12 bg-accent-neon" />
+              <h2 className="text-sm font-semibold text-accent-neon tracking-widest uppercase">
                 Selected Work
               </h2>
             </div>
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold max-w-2xl leading-tight text-white">
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold max-w-2xl leading-tight text-white">
               Featured <span className="text-gray-500">Projects.</span>
             </h3>
           </div>
@@ -123,15 +121,14 @@ const Projects = () => {
                 )}
                 
                 {/* Colored tint for blending */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-20 mix-blend-overlay`} />
+                <div className={`absolute inset-0 bg-accent-neon opacity-10 mix-blend-overlay group-hover:opacity-20 transition-opacity`} />
                 
                 {/* Glass overlay that hides the image partially until hovered */}
-                <div className="absolute inset-0 bg-dark-900/60 md:backdrop-blur-[4px] opacity-100 group-hover:opacity-0 transition-all duration-500" />
+                <div className="absolute inset-0 bg-dark-900/60 opacity-100 group-hover:opacity-0 transition-all duration-500" />
                 
                 {/* Center graphic (fades out on hover to show the clear image) */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-100 group-hover:opacity-0 transition-opacity duration-500">
-                   <div className={`hidden md:block w-32 h-32 rounded-full bg-gradient-to-tr ${project.color} blur-3xl opacity-40 will-change-transform`} />
-                   <div className="absolute text-3xl font-heading font-bold text-white/40 tracking-widest uppercase select-none drop-shadow-lg">
+                   <div className="absolute text-3xl font-bold text-white/40 tracking-widest uppercase select-none drop-shadow-lg">
                      {project.category.split(' ')[0]}
                    </div>
                 </div>
@@ -162,12 +159,12 @@ const Projects = () => {
               {/* Data Content */}
               <div className="flex-1 flex flex-col px-2">
                 <div className="flex items-center gap-3 mb-3">
-                  <span className={`w-2 h-2 rounded-full bg-gradient-to-r ${project.color}`} />
+                  <span className="w-2 h-2 rounded-full bg-accent-neon" />
                   <span className="text-sm font-medium text-gray-400 tracking-wide uppercase">{project.category}</span>
                 </div>
                 
-                <h4 className="text-2xl md:text-3xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r transition-colors duration-300 font-heading" style={{ backgroundImage: `linear-gradient(to right, var(--tw-gradient-stops))` }}>
-                  <span className={`${project.color}`}>{project.title}</span>
+                <h4 className="text-2xl md:text-3xl font-bold text-white mb-4 group-hover:text-accent-neon transition-colors duration-300">
+                  {project.title}
                 </h4>
                 
                 <p className="text-gray-400 text-base leading-relaxed mb-6 flex-1">

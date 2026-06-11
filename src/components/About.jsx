@@ -5,13 +5,13 @@ import { HiSparkles, HiCode, HiLightBulb } from 'react-icons/hi';
 
 const InfoCard = ({ number, text, delay }) => (
   <motion.div
-    initial={{ opacity: 0, y: 20 }}
+    initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: '-50px' }}
     transition={{ duration: 0.5, delay }}
-    className="p-6 rounded-[2rem] glass border border-white/5 bg-[#121826]/40 hover:border-accent-blue/30 transition-all group"
+    className="p-6 rounded-[2rem] bg-dark-700/40 border border-white/5 hover:border-accent-neon/30 transition-all group"
   >
-    <div className="text-3xl md:text-4xl font-heading font-extrabold gradient-text mb-2 group-hover:scale-110 transition-transform origin-left">{number}</div>
+    <div className="text-3xl md:text-4xl font-bold text-white mb-2 group-hover:text-accent-neon transition-colors origin-left">{number}</div>
     <div className="text-[10px] text-gray-500 font-bold tracking-widest uppercase">{text}</div>
   </motion.div>
 );
@@ -21,13 +21,12 @@ const About = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="about" className="section-padding relative overflow-hidden bg-[#0a0f18]">
+    <section id="about" className="section-padding relative overflow-hidden bg-transparent">
       {/* Structural background lines */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none" 
            style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
       
-      <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-[radial-gradient(circle_at_center,_rgba(59,130,246,0.08)_0%,_transparent_60%)] rounded-full -translate-y-1/2 pointer-events-none will-change-transform" />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative" ref={ref}>
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -36,12 +35,12 @@ const About = () => {
           className="mb-16 md:mb-24"
         >
           <div className="flex items-center gap-4 mb-4">
-            <div className="h-px w-12 bg-accent-blue" />
-            <h2 className="text-sm font-semibold text-accent-cyan tracking-widest uppercase">
+            <div className="h-px w-12 bg-accent-neon" />
+            <h2 className="text-sm font-semibold text-accent-neon tracking-widest uppercase">
               About Me
             </h2>
           </div>
-          <h3 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold max-w-2xl leading-tight">
+          <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold max-w-2xl leading-tight">
             Bridging the gap between <span className="text-gray-400">complex AI models</span> and <span className="text-white">elegant user interfaces.</span>
           </h3>
         </motion.div>
@@ -80,13 +79,13 @@ const About = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="p-8 rounded-[2.5rem] glass border border-white/5 bg-[#121826]/60 relative overflow-hidden group hover:border-accent-purple/30 transition-all"
+              className="p-8 rounded-[2.5rem] bg-dark-700/60 border border-white/5 relative overflow-hidden group hover:border-accent-neon/30 transition-all"
             >
               <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-20 transition-opacity duration-500 group-hover:scale-125">
-                <HiSparkles className="text-8xl text-accent-purple" />
+                <HiSparkles className="text-8xl text-accent-neon" />
               </div>
-              <div className="relative z-10 w-14 h-14 rounded-2xl bg-accent-purple/10 flex items-center justify-center mb-8 border border-accent-purple/20">
-                <HiSparkles className="text-2xl text-accent-purple" />
+              <div className="relative z-10 w-14 h-14 rounded-2xl bg-accent-neon/10 flex items-center justify-center mb-8 border border-accent-neon/20">
+                <HiSparkles className="text-2xl text-accent-neon" />
               </div>
               <h4 className="text-xl font-bold text-white mb-3 tracking-tight">AI & Machine Learning</h4>
               <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
@@ -101,11 +100,11 @@ const About = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="p-6 rounded-[2rem] glass border border-white/5 bg-[#121826]/60 hover:border-accent-cyan/30 transition-all group"
+                className="p-6 rounded-[2rem] bg-dark-700/60 border border-white/5 hover:border-accent-neon/30 transition-all group"
               >
                 <div className="flex items-center gap-6">
-                  <div className="w-14 h-14 rounded-2xl bg-accent-blue/10 flex items-center justify-center border border-accent-blue/20 flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <HiCode className="text-2xl text-accent-cyan" />
+                  <div className="w-14 h-14 rounded-2xl bg-accent-neon/10 flex items-center justify-center border border-accent-neon/20 flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <HiCode className="text-2xl text-accent-neon" />
                   </div>
                   <div>
                     <h4 className="text-lg font-bold text-white mb-1">Full-Stack Web</h4>
@@ -120,11 +119,11 @@ const About = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                className="p-6 rounded-[2rem] glass border border-white/5 bg-[#121826]/60 hover:border-emerald-500/30 transition-all group"
+                className="p-6 rounded-[2rem] bg-dark-700/60 border border-white/5 hover:border-accent-neon/30 transition-all group"
               >
                 <div className="flex items-center gap-6">
-                  <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <HiLightBulb className="text-2xl text-emerald-400" />
+                  <div className="w-14 h-14 rounded-2xl bg-accent-neon/10 flex items-center justify-center border border-accent-neon/20 flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <HiLightBulb className="text-2xl text-accent-neon" />
                   </div>
                   <div>
                     <h4 className="text-lg font-bold text-white mb-1">Architecture</h4>

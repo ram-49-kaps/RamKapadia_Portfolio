@@ -1,26 +1,17 @@
-import Navbar from '../components/Navbar';
+import PageTransition from '../components/PageTransition';
 import Hero from '../components/Hero';
-import About from '../components/About';
-import Skills from '../components/Skills';
-import Projects from '../components/Projects';
-import Experience from '../components/Experience';
-import Contact from '../components/Contact';
+import HomeIntro from '../components/HomeIntro';
 import Footer from '../components/Footer';
 
 const Home = () => {
   return (
-    <>
-      <Navbar />
-      <main>
+    <PageTransition>
+      <main className="min-h-screen">
         <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Contact />
+        <HomeIntro />
       </main>
       <Footer />
-    </>
+    </PageTransition>
   );
 };
 

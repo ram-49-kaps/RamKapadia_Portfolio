@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
+import Logo from './Logo';
 
 const greetings = ['Hello', 'नमस्ते', 'Bonjour', 'こんにちは', 'مرحبا', 'Hola', 'Ciao', 'Welcome'];
 
@@ -55,8 +56,8 @@ const Loader = ({ onComplete }) => {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
           {/* Subtle ambient gradient */}
-          <div className="absolute inset-0 opacity-30">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-[radial-gradient(circle_at_center,_rgba(139,92,246,0.08)_0%,_transparent_70%)] rounded-full" />
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-[radial-gradient(circle_at_center,_rgba(0,255,136,0.08)_0%,_transparent_70%)] rounded-full" />
           </div>
 
           {/* Top-left: RK. Logo */}
@@ -66,16 +67,7 @@ const Loader = ({ onComplete }) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <div className="flex items-center gap-3">
-              <img
-                src="/logo-rk.png"
-                alt="RK"
-                className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg"
-              />
-              <span className="text-white/60 font-heading text-sm sm:text-base font-medium tracking-widest">
-                RK.
-              </span>
-            </div>
+            <Logo className="w-10 h-10 sm:w-12 sm:h-12 border-[2.5px] opacity-60" textClassName="text-lg sm:text-xl mt-0.5" />
           </motion.div>
 
           {/* Center: Cycling greeting text */}
@@ -114,7 +106,7 @@ const Loader = ({ onComplete }) => {
           {/* Bottom progress line */}
           <div className="absolute bottom-0 left-0 w-full h-[2px] bg-white/5">
             <motion.div
-              className="h-full bg-gradient-to-r from-accent-blue via-accent-purple to-accent-cyan"
+              className="h-full bg-accent-neon"
               initial={{ width: '0%' }}
               animate={{ width: `${percentage}%` }}
               transition={{ duration: 0.05, ease: 'linear' }}
